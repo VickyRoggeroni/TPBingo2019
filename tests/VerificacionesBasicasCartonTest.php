@@ -54,6 +54,9 @@ class VerificacionesBasicasCartonTest extends TestCase {
     $this->assertFalse($carton->tieneNumero(91));
   }
 
+  /**
+   * Devuelve una lista de objetos para usar con dataProvider
+   */
   public function cartones() {
     return [
       [new CartonEjemplo],
