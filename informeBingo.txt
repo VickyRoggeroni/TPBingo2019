@@ -1,6 +1,6 @@
 .gitignore: no incluye el archivo vendor cuando se hace el commit. En este archivo se guardan las librerias que descarga composer. NO ignora los archivos que ya fueron trackeados.
 
-.travis.yml: le indica a Travis-CI lo que debe realizar cada vez que se ejecuta un Build. lenguage: php indica el lenguaje de programacion utilizado. Las siguientes dos lineas indican la version de php. Install:?. Script: indica el nombre de la carpeta que se va a testear
+.travis.yml: le indica a Travis-CI lo que debe realizar cada vez que se ejecuta un Build. lenguage: php indica el lenguaje de programacion utilizado. Las siguientes dos lineas indican la version de php. Install:?. Script: indica el nombre de la carpeta que se va a testear.
 
 composer.json: indica que librerias utilizaremos en el proyecto. Composer se encarga de instalarlas, y a las dependencias tambien.
 
@@ -10,4 +10,10 @@ psr-4: es un mecanismo de autocarga para incluir una clase que hayamos creado no
 
 autoload: es un archivo que se crea en el archivo vendor junto con las librerias. Se incluye en los scripts en donde querramos usar las librerias.
 
+El administrador de paquetes para Ruby puede ser Bundler y para NodejS se usa NPM (Node Package Manager).
 
+namespace: sirve para dividir el codigo en partes, de esa forma podes tener dos clases con el mismo nombre, siempre y cuando esten en distintos namespace. Los namespace no son necesarios, asi que so borramos los namespace de los archivos, no deberia pasar nada. 
+
+{@inheritDoc}: Es usado para importar la descripcion de un elemento que se encuentra en una clase padre, a la clase hijo en la que estas actualmente, incluso si esa descripcion ya esta ahi. 
+
+extends: Al extender una clase, la subclase hereda todos los metodos publicos y protegidos de la clase padre, asi que a moes que ya exista un metodo con el mismo nombre que uno heredado, deberia funcionar bien. Entonces, los metodos de la clase TestCase, seran heredados por tests. 
