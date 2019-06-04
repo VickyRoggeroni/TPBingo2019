@@ -1,0 +1,13 @@
+.gitignore: no incluye el archivo vendor cuando se hace el commit. En este archivo se guardan las librerias que descarga composer.
+
+.travis.yml: le indica a Travis-CI lo que debe realizar cada vez que se ejecuta un Build. lenguage: php indica el lenguaje de programacion utilizado. Las siguientes dos lineas indican la version de php. Install:?. Script: indica el nombre de la carpeta que se va a testear
+
+composer.json: indica que librerias utilizaremos en el proyecto. Composer se encarga de instalarlas, y a las dependencias tambien.
+
+composer.lock: este archivo se genera al actualizar las librerias que se encuentran en el archivo composer.json.
+
+psr-4: es un mecanismo de autocarga para incluir una clase que hayamos creado nosotros mismos en lugar de haberla descargado con composer. Se especifica ene l el nombre de la clase seguido del directorio en donde esta se encuentra.
+
+autoload: es un archivo que se crea en el archivo vendor junto con las librerias. Se incluye en los scripts en donde querramos usar las librerias.
+
+
