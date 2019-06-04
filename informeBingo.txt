@@ -1,4 +1,4 @@
-.gitignore: no incluye el archivo vendor cuando se hace el commit. En este archivo se guardan las librerias que descarga composer.
+.gitignore: no incluye el archivo vendor cuando se hace el commit. En este archivo se guardan las librerias que descarga composer. NO ignora los archivos que ya fueron trackeados.
 
 .travis.yml: le indica a Travis-CI lo que debe realizar cada vez que se ejecuta un Build. lenguage: php indica el lenguaje de programacion utilizado. Las siguientes dos lineas indican la version de php. Install:?. Script: indica el nombre de la carpeta que se va a testear
 
