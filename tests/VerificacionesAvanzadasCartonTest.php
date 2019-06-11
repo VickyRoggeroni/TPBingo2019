@@ -115,7 +115,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
       }
     }
 
-    $this->assertEquals(3, $celdasIndividuales);
+    $this->assertEquals(3, $co2);
 
   }
 
