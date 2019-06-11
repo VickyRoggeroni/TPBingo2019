@@ -12,18 +12,19 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
   public function testUnoANoventa() {
     include CartonJs;
+    $bool = True;
+    $carton=new CartonJs;
 
-    foreach ($this->filas() as $fila) {
+    foreach ($carton->filas() as $fila) {
       foreach ($fila as $celda) {
-        if ($celda >= 1 && $celda <= 90) {
-          $numeros[] = $celda;
+        if ($celda < 1 || $celda > 90) {
+          $bool = False;
         }
       }
     }
 
-    if ($numeros == $numeros_carton){
-      $this->assertTrue(TRUE);
-    }
+    $this->assertTrue($bool);
+    
   }
 
   /**
