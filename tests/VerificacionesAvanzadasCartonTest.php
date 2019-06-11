@@ -82,15 +82,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
     foreach($carton->columnas() as $columna) {
       foreach($columna as $celda){
-        if($celda == 0){
-          continue;
-        }
         if($celda != 0){
           $co++;
         }
-      }
-      if($co != 3){
-        continue;
       }
       if($co == 3){
         $this->assertTrue(FALSE);
