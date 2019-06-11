@@ -108,8 +108,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
         }
       }
       if($co==1){
-        $co2=$co2+1;
-        $co=0;
+        $co2++;
       }
     }
 
