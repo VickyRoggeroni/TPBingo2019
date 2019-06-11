@@ -40,15 +40,8 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
     $carton=new CartonEjemplo;
 
     foreach($carton->filas() as $fila) {
-      if($this->assertCount(5,array_filter($fila))){
-        continue;
-      }
-      else{
-        $this->assertTrue(FALSE);
-      }
+      $this->assertCount(5,array_filter($fila));
     }
-
-    $this->assertTrue(TRUE);
 
   }
 
