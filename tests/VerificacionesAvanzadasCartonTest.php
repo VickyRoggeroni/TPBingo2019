@@ -78,14 +78,24 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   public function testColumnaCompleta() {
 
     $carton = new CartonEjemplo;
+    $co=0;
 
     foreach($carton->columnas() as $columna) {
-      if($this->assertCount(3,array_filter($columna))){
-        $this->assertTrue(FALSE);
+      foreach($columna as $celda){
+        if($celda == 0){
+          continue;
+        }
+        if($celda != 0){
+          $co++;
+        }
       }
-      else{
+      if($co != 3){
         continue;
       }
+      if($co == 3){
+        $this->assertTrue(FALSE);
+      }
+
     }
 
     $this->assertTrue(TRUE);
