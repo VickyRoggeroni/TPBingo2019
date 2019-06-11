@@ -57,6 +57,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
       if($bool){
         foreach($columna as $celda){
           $bool = FALSE;
+          if ($celda == 0){
+            continue;
+          }
           if ($celda != 0){
           $bool = TRUE;
           }
