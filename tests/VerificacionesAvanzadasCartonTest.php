@@ -22,6 +22,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
         if ($celda < 1 || $celda > 90) {
           $bool = FALSE;
         }
+        if($celda == 0){
+          continue;
+        }
       }
     }
 
@@ -68,6 +71,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que no haya columnas de un carton con tres celdas ocupadas.
    */
   public function testColumnaCompleta() {
+
+    $carton = new CartonEjemplo;
+
     $this->assertTrue(TRUE);
   }
 
