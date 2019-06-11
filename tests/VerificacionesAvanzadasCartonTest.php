@@ -19,11 +19,11 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
     foreach ($carton->filas() as $fila) {
       foreach ($fila as $celda) {
-        if ($celda < 1 || $celda > 90) {
-          $bool = FALSE;
-        }
         if($celda == 0){
           continue;
+        }
+        if ($celda < 1 || $celda > 90) {
+          $bool = FALSE;
         }
       }
     }
@@ -72,7 +72,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testColumnaCompleta() {
 
-    $carton = new CartonEjemplo;
+    $carton = new CartonEjemplo; 
 
     $this->assertTrue(TRUE);
   }
