@@ -14,13 +14,13 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
   public function testUnoANoventa() {
     
-    $bool = True;
+    $bool = TRUE;
     $carton=new CartonEjemplo;
 
     foreach ($carton->filas() as $fila) {
       foreach ($fila as $celda) {
         if ($celda < 1 || $celda > 90) {
-          $bool = False;
+          $bool = FALSE;
         }
       }
     }
@@ -47,15 +47,15 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testColumnaNoVacia() {
 
-    $bool = True;
+    $bool = TRUE;
     $carton=new CartonEjemplo;
 
     foreach($carton->columnas() as $columna){
       if($bool){
         foreach($columna as $celda){
-          $bool = False;
+          $bool = FALSE;
           if ($celda != 0){
-          $bool = True;
+          $bool = TRUE;
           }
         }
       }
