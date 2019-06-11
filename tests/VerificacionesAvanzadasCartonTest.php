@@ -4,6 +4,8 @@ namespace Bingo;
 
 use PHPUnit\Framework\TestCase;
 
+include CartonJs;
+
 class VerificacionesAvanzadasCartonTest extends TestCase {
 
   /**
