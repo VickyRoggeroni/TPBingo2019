@@ -40,8 +40,15 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
     $carton=new CartonEjemplo;
 
     foreach($carton->filas() as $fila) {
-      $this->assertCount(5,array_filter($fila));
+      if($this->assertCount(5,array_filter($fila))){
+        continue;
+      }
+      else{
+        $this->assertTrue(FALSE);
+      }
     }
+
+    $this->assertTrue(TRUE);
 
   }
 
@@ -122,7 +129,26 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * las columnas a la derecha.
    */
   public function testNumerosIncrementales() {
-    $this->assertTrue(TRUE);
+    $max = 0;
+    $cel = 0;
+    foreach($carton->columnas() as $columna){
+      $min = 100;
+      foreach($columna as $celda){
+        if($celda < $min && $celda != 0){
+          $min = $celda;
+        }
+        if ($celda > $aux){
+          $cel = $celda;
+        }
+      }
+      if($min>$max){
+        $this->assertTrue(TRUE);
+      }
+      else{
+        $this->assertTrue(FALSE);
+      }
+      $max = $cel;
+    }
   }
 
   /**
