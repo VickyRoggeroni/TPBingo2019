@@ -68,4 +68,27 @@ class CartonJs implements CartonInterface {
     return in_array($numero, $this->numeros_carton);
   }
 
+  public function filas() {
+    return [
+      [4,0,24,31,40,0,0,0,80],
+      [0,13,0,39,48,0,66,72,0],
+      [1,0,27,0,0,50,0,73,86],
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function columnas() {
+    $columnas = [];
+    
+    for($i=0; $i<3; $i++)
+    {
+        for($a=0, $a<9, $a++)
+        {
+        $columnas [$j][$i] = $this->numeros_carton;
+        }
+    }
+  }
+
 }
