@@ -4,8 +4,6 @@ namespace Bingo;
 
 use PHPUnit\Framework\TestCase;
 
-include CartonEjemplo;
-
 class VerificacionesAvanzadasCartonTest extends TestCase {
 
   /**
@@ -115,7 +113,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
       }
     }
 
-    $this->assertEquals(3, $co2);
+    $this->assertTrue($co2==3);
 
   }
 
