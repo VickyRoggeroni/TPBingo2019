@@ -11,7 +11,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
 
   public function testUnoANoventa() {
-    include CartonJs;
+    
     $bool = True;
     $carton=new CartonJs;
 
@@ -37,14 +37,23 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
     foreach($carton->filas() as $fila) {
       $this->assertCount(5,array_filter($fila));
     }
-    
+
   }
 
   /**
    * Verifica que para cada columna, haya al menos una celda ocupada.
    */
   public function testColumnaNoVacia() {
-    $this->assertTrue(TRUE);
+    $bool = False;
+    $carton=new CartonJs;
+  
+    foreach($carton->columna() as $columna){
+      foreach($columna as $celda){
+        if ($celda != 0){
+        $bool = True;
+        }
+      }
+    }
   }
 
   /**
