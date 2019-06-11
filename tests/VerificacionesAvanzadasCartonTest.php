@@ -81,13 +81,13 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
     foreach($carton->columnas() as $columna) {
       if($this->assertCount(3,array_filter($columna))){
-        $this->assertTrue(FALSE);
-      }
-      else{
         $this->assertTrue(TRUE);
       }
+      else{
+        $this->assertTrue(FALSE);
+      }
     }
-    
+
   }
 
   /**
