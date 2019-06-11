@@ -77,9 +77,17 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testColumnaCompleta() {
 
-    $carton = new CartonEjemplo; 
+    $carton = new CartonEjemplo;
 
-    $this->assertTrue(TRUE);
+    foreach($carton->columnas() as $columna) {
+      if($this->assertCount(3,array_filter($columna))){
+        $this->assertTrue(FALSE);
+      }
+      else{
+        $this->assertTrue(TRUE);
+      }
+    }
+    
   }
 
   /**
