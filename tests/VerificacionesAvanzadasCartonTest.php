@@ -86,13 +86,11 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
           $co++;
         }
       }
-      if($co == 3){
-        $this->assertTrue(FALSE);
-      }
+
+      $this->assertNotEquals(3, $co);
+      $co = 0; 
 
     }
-
-    $this->assertTrue(TRUE);
 
   }
 
@@ -113,16 +111,12 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
       }
       if($co==1){
         $co2=$co2+1;
+        $co=0;
       }
     }
 
-    if($co2 == 3){
-      $this->assertTrue(TRUE);
-    }
-    else{
-      $this->assertTrue(FALSE);
-    }
-    
+    $this->assertEquals(3, $celdasIndividuales);
+
   }
 
   /**
