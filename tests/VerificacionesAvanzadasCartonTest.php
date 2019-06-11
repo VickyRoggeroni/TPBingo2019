@@ -46,16 +46,22 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que para cada columna, haya al menos una celda ocupada.
    */
   public function testColumnaNoVacia() {
-    $bool = False;
-    $carton=new CartonEjemplo;
-  
+    
+    $bool = True;
+    $carton=new CartonJs;
+
     foreach($carton->columna() as $columna){
-      foreach($columna as $celda){
-        if ($celda != 0){
-        $bool = True;
+      if($bool){
+        foreach($columna as $celda){
+          $bool = False;
+          if ($celda != 0){
+          $bool = True;
+          }
         }
       }
     }
+    
+    $this->assertTrue($bool);
   }
 
   /**
