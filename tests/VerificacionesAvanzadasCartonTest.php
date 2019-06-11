@@ -103,22 +103,26 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   public function testTresCeldasIndividuales() {
     $carton = new CartonEjemplo;
     $co = 0;
+    $co2 = 0;
 
     foreach($carton->columnas() as $columna) {
-      if($this->assertCount(1,array_filter($columna))){
-        $co = $co+1;
+      foreach($columna as $celda){
+        if($celda != 0){
+          $co++;
+        }
       }
-      else{
-        continue;
+      if($co==1){
+        $co2=$co2+1;
       }
     }
 
-    if($co == 3){
+    if($co2 == 3){
       $this->assertTrue(TRUE);
     }
     else{
       $this->assertTrue(FALSE);
     }
+    
   }
 
   /**
