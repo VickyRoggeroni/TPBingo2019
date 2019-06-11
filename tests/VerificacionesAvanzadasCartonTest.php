@@ -133,7 +133,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
         if($celda < $min && $celda != 0){
           $min = $celda;
         }
-        if ($celda > $aux){
+        if ($celda > $cel){
           $cel = $celda;
         }
       }
