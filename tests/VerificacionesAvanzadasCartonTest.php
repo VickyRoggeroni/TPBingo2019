@@ -122,6 +122,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * las columnas a la derecha.
    */
   public function testNumerosIncrementales() {
+
+    $carton = new CartonEjemplo;
+
     $max = 0;
     $cel = 0;
     foreach($carton->columnas() as $columna){
@@ -148,7 +151,27 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que en una fila no existan más de dos celdas vacias consecutivas.
    */
   public function testFilasConVaciosUniformes() {
-    $this->assertTrue(TRUE);
+
+    $carton = new CartonEjemplo;
+
+    foreach($carton->filas() as $fila){	
+      $co = 0;
+      foreach($fila as $celda){
+      	if($celda == 0){
+         $co++; 
+        }
+        else{
+         $comax=$co;
+         $co = 0;
+        }
+      }
+      if($comax < 3){
+      $this->assertTrue(TRUE);
+      }
+      else{
+        $this->assertTrue(FALSE);
+      }
+    }
   }
 
 }
