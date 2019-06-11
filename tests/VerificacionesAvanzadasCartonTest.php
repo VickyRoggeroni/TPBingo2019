@@ -81,14 +81,14 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
     foreach($carton->columnas() as $columna) {
       if($this->assertCount(3,array_filter($columna))){
-        $this->assertTrue(TRUE);
+        $this->assertTrue(FALSE);
       }
       else{
         continue;
       }
     }
 
-    $this->assertTrue(FALSE);
+    $this->assertTrue(TRUE);
 
   }
 
@@ -97,7 +97,24 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * ocupada.
    */
   public function testTresCeldasIndividuales() {
-    $this->assertTrue(TRUE);
+    $carton = new CartonEjemplo;
+    $co = 0;
+
+    foreach($carton->columnas() as $columna) {
+      if($this->assertCount(1,array_filter($columna))){
+        $co = $co+1;
+      }
+      else{
+        continue;
+      }
+    }
+
+    if($co == 3){
+      $this->assertTrue(TRUE);
+    }
+    else{
+      $this->assertTrue(FALSE);
+    }
   }
 
   /**
