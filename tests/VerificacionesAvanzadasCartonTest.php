@@ -4,7 +4,7 @@ namespace Bingo;
 
 use PHPUnit\Framework\TestCase;
 
-include CartonJs;
+include CartonEjemplo;
 
 class VerificacionesAvanzadasCartonTest extends TestCase {
 
@@ -15,7 +15,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   public function testUnoANoventa() {
     
     $bool = True;
-    $carton=new CartonJs;
+    $carton=new CartonEjemplo;
 
     foreach ($carton->filas() as $fila) {
       foreach ($fila as $celda) {
@@ -34,7 +34,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testCincoNumerosPorFila() {
 
-    $carton=new CartonJs;
+    $carton=new CartonEjemplo;
 
     foreach($carton->filas() as $fila) {
       $this->assertCount(5,array_filter($fila));
@@ -47,7 +47,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testColumnaNoVacia() {
     $bool = False;
-    $carton=new CartonJs;
+    $carton=new CartonEjemplo;
   
     foreach($carton->columna() as $columna){
       foreach($columna as $celda){
