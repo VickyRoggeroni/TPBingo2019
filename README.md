@@ -77,7 +77,7 @@ Como se puede ver, sólo los intentos 1 y 4 dieron cartones que se consideran _v
 1. **Importante:** No se puede tocar el código del método FabricaCarton::intentoCarton.
 1. Crear una clase nueva llamada Carton que acepte un cartón aleatorio en su constructor. Copiar los métodos filas, columnas y tieneNumero de la clase CartonEjemplo.
 1. Borrar el test que valida que un cartón tiene un numero específico. (`VerificacionesBasicasCartonTest::testTieneNumero`)
-1. La clase FabricaCarton debería contar con un nuevo método que se llame `validarCarton`. Que devuelva TRUE en caso de que el cartón sea válido.
-1. La clase FabricaCarton deberia tener un nuevo método que devuelva cartones válidos. El código ya esta empezado pero tiene fallas que necesitan arreglo.
+1. La clase FabricaCarton debería contar con un nuevo método que se llame `cartonEsValido`. Que devuelva TRUE en caso de que el cartón sea válido.
+1. La clase FabricaCarton deberia tener un nuevo método que devuelva cartones válidos. El código ya esta empezado (ver generarCarton) pero tiene fallas que necesitan arreglo.
 1. Modicar los test para que creen un cartón aleatorio usando la FabricaCarton.
 1. La consigna es entonces generar un sistema que pruebe varias alternativas hasta que encuentre una válida. Y que corran los tests automaticos validando que el carton generado aleatoriamente efectivamente es válido.
