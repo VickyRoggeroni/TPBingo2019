@@ -50,24 +50,26 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testColumnaNoVacia() {
 
-    $bool = TRUE;
     $carton=new CartonEjemplo;
 
+    $co = 0;
+
     foreach($carton->columnas() as $columna){
-      if($bool){
-        foreach($columna as $celda){
-          $bool = FALSE;
-          if ($celda == 0){
-            continue;
-          }
-          if ($celda != 0){
-          $bool = TRUE;
-          }
+      foreach($columna as $celda){
+        if ($celda != 0){
+        $co=$co+1;
         }
       }
+      if($co == 0){
+        $this->assertTrue(FALSE);
+      }
+      else{
+        $co = 0;
+      }
     }
+
+    $this->assertTrue(TRUE);
     
-    $this->assertTrue($bool);
   }
 
   /**
