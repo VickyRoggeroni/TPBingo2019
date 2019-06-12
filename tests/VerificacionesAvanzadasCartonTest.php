@@ -10,7 +10,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que los números del carton se encuentren en el rango 1 a 90.
    */
   	/**
-	* @dataProvider cartonProvider
+	* @dataProvider provider
 	*/
   public function testUnoANoventa(CartonInterface $carton) {
     
@@ -32,7 +32,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que cada fila de un carton tenga exactamente 5 celdas ocupadas.
    */
   	/**
-	* @dataProvider cartonProvider
+	* @dataProvider provider
 	*/
   public function testCincoNumerosPorFila(CartonInterface $carton) {
     
@@ -45,7 +45,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que para cada columna, haya al menos una celda ocupada.
    */
   	/**
-	* @dataProvider cartonProvider
+	* @dataProvider provider
 	*/
   public function testColumnaNoVacia(CartonInterface $carton) {
 
@@ -70,7 +70,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que no haya columnas de un carton con tres celdas ocupadas.
    */
   	/**
-	* @dataProvider cartonProvider
+	* @dataProvider provider
 	*/
   public function testColumnaCompleta(CartonInterface $carton) {
    $carton = new CartonEjemplo;
@@ -92,7 +92,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * ocupada.
    */
   	/**
-	* @dataProvider cartonProvider
+	* @dataProvider provider
 	*/
   public function testTresCeldasIndividuales(CartonInterface $carton) {
     
@@ -117,7 +117,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * las columnas a la derecha.
    */
   	/**
-	* @dataProvider cartonProvider
+	* @dataProvider provider
 	*/
   public function testNumerosIncrementales(CartonInterface $carton) {
 
@@ -147,7 +147,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que en una fila no existan más de dos celdas vacias consecutivas.
    */
   	/**
-	* @dataProvider cartonProvider
+	* @dataProvider provider
 	*/
   public function testFilasConVaciosUniformes(CartonInterface $carton) 
   {
