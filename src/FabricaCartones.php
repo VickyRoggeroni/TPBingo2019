@@ -69,9 +69,8 @@ class FabricaCartones {
 
   protected function validarColumnaNoVacia($carton) {
     
-    $co = 0;
-    
     foreach($carton->columnas() as $columna){
+      $co = 0;
       foreach($columna as $celda){
         if ($celda != 0){
         $co++;
