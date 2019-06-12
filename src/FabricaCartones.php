@@ -21,7 +21,7 @@ class FabricaCartones {
   }
 
   protected function cartonEsValido($carton) {
-    if ($this->validarUnoANoventa($carton) &&
+    if ($this->validarUnoANoventa($carton) //&&
       //$this->validarCincoNumerosPorFila($carton) &&
       //$this->validarColumnaNoVacia($carton) &&
       //$this->validarColumnaCompleta($carton) &&
