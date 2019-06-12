@@ -33,7 +33,7 @@ class CartonJs implements CartonInterface {
     
     for($i=0; $i<3; $i++)
     {
-        for($a=0; $a<9; $a++)
+        for($j=0; $j<9; $j++)
         {
         $columnas [$j][$i] = $this->numeros_carton;
         }
