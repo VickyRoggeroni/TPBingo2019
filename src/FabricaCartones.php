@@ -11,11 +11,11 @@ class FabricaCartones {
     /*El bucle se repite infinitamente hasta que el carton generado sea valido,
     en ese caso el bool se cambia a true, y el bucle termina*/
     while($this->validez == FALSE){
-        $carton = $this->intentoCarton();
+        $carton = new Carton( $this->intentoCarton());
 
         if ($this->cartonEsValido($carton)) {
           $validez = TRUE;        //Cuando el carton generado es valido, el bool se cambia a true, el bucle acaba
-          return $carton;
+          return $carton->numeros_carton;
         }
     }
   }
@@ -37,7 +37,6 @@ class FabricaCartones {
   protected function validarUnoANoventa($carton) {
 
     $bool = TRUE;
-    $carton=new CartonEjemplo;
     foreach ($carton->filas() as $fila) {
       foreach ($fila as $celda) {
         if($celda == 0){
@@ -53,7 +52,6 @@ class FabricaCartones {
   }
 
   protected function validarCincoNumerosPorFila($carton) {
-    $carton=new CartonEjemplo;
     
     foreach($carton->filas() as $fila) 
     {
@@ -64,7 +62,6 @@ class FabricaCartones {
 
   protected function validarColumnaNoVacia($carton) {
     
-    $carton=new CartonEjemplo;
     $co = 0;
     
     foreach($carton->columnas() as $columna){
@@ -85,7 +82,6 @@ class FabricaCartones {
 
   protected function validarColumnaCompleta($carton) {
     
-    $carton = new CartonEjemplo;
     $co=0;
     foreach($carton->columnas() as $columna) {
       foreach($columna as $celda){
@@ -100,7 +96,6 @@ class FabricaCartones {
 
   protected function validarTresCeldasIndividuales($carton) {
     
-    $carton = new CartonEjemplo;
     $co = 0;
     $co2 = 0;
     foreach($carton->columnas() as $columna) {
@@ -119,7 +114,6 @@ class FabricaCartones {
 
   protected function validarNumerosIncrementales($carton) {
     
-    $carton = new CartonEjemplo;
     $max = 0;
     $cel = 0;
     foreach($carton->columnas() as $columna){
@@ -144,7 +138,6 @@ class FabricaCartones {
 
   protected function validarFilasConVaciosUniformes($carton) {
     
-    $carton = new CartonEjemplo;
     foreach($carton->filas() as $fila){	
       $co = 0;
       foreach($fila as $celda){
