@@ -10,7 +10,7 @@ class FabricaCartones {
     
     /*El bucle se repite infinitamente hasta que el carton generado sea valido,
     en ese caso el bool se cambia a true, y el bucle termina*/
-    while($this->validez == FALSE){
+    while($validez == FALSE){
         $carton = new Carton( $this->intentoCarton());
 
         if ($this->cartonEsValido($carton)) {
