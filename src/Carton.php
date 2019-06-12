@@ -4,7 +4,7 @@ namespace Bingo;
 
 Class Carton implements CartonInterface
 {
-    protected $numeros_carton = [];
+    public $numeros_carton = [];
 
     public function __construct (array $aleatorio)
     {
