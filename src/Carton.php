@@ -2,7 +2,7 @@
 
 namespace Bingo;
 
-Class carton implements CartonInterface
+Class Carton implements CartonInterface
 {
     protected $carton;
 
