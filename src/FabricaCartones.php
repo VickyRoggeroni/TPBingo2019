@@ -6,7 +6,7 @@ class FabricaCartones {
 
   public function generarCarton() {
     // Algo de pseudo-código para ayudar con la evaluacion.
-    protected $Validez = FALSE;
+    $Validez = FALSE;
     
     /*El bucle se repite infinitamente hasta que el carton generado sea valido,
     en ese caso el bool se cambia a true, y el bucle termina*/
