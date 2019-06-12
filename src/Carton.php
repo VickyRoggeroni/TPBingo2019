@@ -8,7 +8,7 @@ Class Carton implements CartonInterface
 
     public function __construct (array $aleatorio)
     {
-	$this->$numeros_carton = $aleatorio;
+	$this->numeros_carton = $aleatorio;
     }
     
     public function filas() {
