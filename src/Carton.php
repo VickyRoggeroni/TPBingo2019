@@ -10,7 +10,10 @@ Class Carton implements CartonInterface
     {
 	$this->numeros_carton = $aleatorio;
     }
-    
+      /**
+   * {@inheritdoc}
+   */
+	
     public function filas() {
     $fila = [];
     $fila[] = [];
@@ -44,7 +47,10 @@ Class Carton implements CartonInterface
     }
     return $numeros;
   }	
-	
+
+    /**
+   * {@inheritdoc}
+   */	
     public function tieneNumero(int $numero) {
     return in_array($numero, $this->numeros_carton);
   }
