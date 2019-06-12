@@ -25,8 +25,8 @@ class FabricaCartones {
       $this->validarCincoNumerosPorFila($carton) &&
       $this->validarColumnaNoVacia($carton) &&
       $this->validarColumnaCompleta($carton) &&
-      $this->validarTresCeldasIndividuales($carton) //&&
-      //$this->validarNumerosIncrementales($carton) &&
+      $this->validarTresCeldasIndividuales($carton) &&
+      $this->validarNumerosIncrementales($carton) //&&
       //$this->validarFilasConVaciosUniformes($carton)
     ) {
       return TRUE;
