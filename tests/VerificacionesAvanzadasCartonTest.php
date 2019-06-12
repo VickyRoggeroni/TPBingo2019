@@ -178,7 +178,7 @@ public function provider()
 {
       return [
       [new CartonEjemplo],
-      [new CartonJs],
+      #[new CartonJs],
       [new Carton((new FabricaCartones)->generarCarton())]
     ];
 }
