@@ -133,12 +133,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
           $cel = $celda;
         }
       }
-      if($min>$max){
-        $this->assertTrue(TRUE);
-      }
-      else{
-        $this->assertTrue(FALSE);
-      }
+        $this->assertTrue($min>$max);
       $max = $cel;
     }
   }
