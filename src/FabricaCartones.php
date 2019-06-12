@@ -107,7 +107,7 @@ class FabricaCartones {
     $co = 0;
     $co2 = 0;
     foreach($carton->columnas() as $columna) {
-      $c0 = 0;
+      $co = 0;
       foreach($columna as $celda){
         if($celda != 0){
           $co++;
