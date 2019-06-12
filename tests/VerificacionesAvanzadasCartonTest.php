@@ -9,8 +9,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que los números del carton se encuentren en el rango 1 a 90.
    */
-  public function testUnoANoventa(CartonInterface $carton) {
+  public function testUnoANoventa() {
     
+    $carton = new CartonInterface;
     $bool = TRUE;
     foreach ($carton->filas() as $fila) {
       foreach ($fila as $celda) {
