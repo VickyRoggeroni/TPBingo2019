@@ -29,30 +29,133 @@ class FabricaCartones {
 
   protected function validarUnoANoventa($carton) {
 
+    $bool = TRUE;
+    $carton=new CartonEjemplo;
+    foreach ($carton->filas() as $fila) {
+      foreach ($fila as $celda) {
+        if($celda == 0){
+          continue;
+        }
+        if ($celda < 1 || $celda > 90) {
+          $bool = FALSE;
+        }
+      }
+    }
+    $this->assertTrue($bool);
+    
   }
 
   protected function validarCincoNumerosPorFila($carton) {
-
+    $carton=new CartonEjemplo;
+    
+    foreach($carton->filas() as $fila) 
+    {
+      $this->assertCount(5,array_filter($fila));
+    }
+    
   }
 
   protected function validarColumnaNoVacia($carton) {
-
+    
+    $carton=new CartonEjemplo;
+    $co = 0;
+    
+    foreach($carton->columnas() as $columna){
+      foreach($columna as $celda){
+        if ($celda != 0){
+        $co=$co+1;
+        }
+      }
+      if($co == 0){
+        $this->assertTrue(FALSE);
+      }
+      else{
+        $co = 0;
+      }
+    }
+    $this->assertTrue(TRUE);
   }
 
   protected function validarColumnaCompleta($carton) {
-
+    
+    $carton = new CartonEjemplo;
+    $co=0;
+    foreach($carton->columnas() as $columna) {
+      foreach($columna as $celda){
+        if($celda != 0){
+          $co++;
+        }
+      }
+      $this->assertNotEquals(3, $co);
+      $co = 0; 
+    }
   }
 
   protected function validarTresCeldasIndividuales($carton) {
-
+    
+    $carton = new CartonEjemplo;
+    $co = 0;
+    $co2 = 0;
+    foreach($carton->columnas() as $columna) {
+      $c0 = 0;
+      foreach($columna as $celda){
+        if($celda != 0){
+          $co++;
+        }
+      }
+      if($co==1){
+        $co2++;
+      }
+    }
+    $this->assertTrue($co2==3);
   }
 
   protected function validarNumerosIncrementales($carton) {
-
+    
+    $carton = new CartonEjemplo;
+    $max = 0;
+    $cel = 0;
+    foreach($carton->columnas() as $columna){
+      $min = 100;
+      foreach($columna as $celda){
+        if($celda < $min && $celda != 0){
+          $min = $celda;
+        }
+        if ($celda > $cel){
+          $cel = $celda;
+        }
+      }
+      if($min>$max){
+        $this->assertTrue(TRUE);
+      }
+      else{
+        $this->assertTrue(FALSE);
+      }
+      $max = $cel;
+    }
   }
 
   protected function validarFilasConVaciosUniformes($carton) {
-
+    
+    $carton = new CartonEjemplo;
+    foreach($carton->filas() as $fila){	
+      $co = 0;
+      foreach($fila as $celda){
+      	if($celda == 0){
+         $co++; 
+        }
+        else{
+         $comax=$co;
+         $co = 0;
+        }
+      }
+      if($comax < 3){
+      $this->assertTrue(TRUE);
+      }
+      else{
+        $this->assertTrue(FALSE);
+      }
+    }
   }
 
 
