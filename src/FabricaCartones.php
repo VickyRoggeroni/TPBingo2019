@@ -6,10 +6,17 @@ class FabricaCartones {
 
   public function generarCarton() {
     // Algo de pseudo-código para ayudar con la evaluacion.
-    $carton = $this->intentoCarton();
+    protected $Validez = FALSE;
+    
+    /*El bucle se repite infinitamente hasta que el carton generado sea valido,
+    en ese caso el bool se cambia a true, y el bucle termina*/
+    while($this->validez == FALSE){
+        $carton = $this->intentoCarton();
 
-    if ($this->cartonEsValido($carton)) {
-      return $carton;
+        if ($this->cartonEsValido($carton)) {
+          $validez = TRUE;        //Cuando el carton generado es valido, el bool se cambia a true, el bucle acaba
+          return $carton;
+        }
     }
   }
 
