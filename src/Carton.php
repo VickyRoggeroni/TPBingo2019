@@ -11,18 +11,20 @@ Class Carton implements CartonInterface
 	$this->$numeros_carton = $aleatorio;
     }
     
-    public function filas() 
+    public function filas() {
+    $fila = [];
+    $fila[] = [];
+    for($i=0;$i<3;$i++)
     {
-    	$filas = []
-	
-    	for($i=0; $i<3; $i++)
-    	{
-        	for($j=0; $j<9; $j++)
-        	{
-        	$filas [$i][$j] = $this->numeros_carton;
-        	}
-    	}
+        foreach ($this->columnas() as $columna)
+        {
+          $fila[$i][]=$columna[$i];
+        }
     }
+  
+     return $fila;
+  
+  }
 	
   /**
    * {@inheritdoc}
