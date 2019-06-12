@@ -87,7 +87,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
     
     $co2 = 0;
     foreach($carton->columnas() as $columna) {
-      $c0 = 0;
+      $co = 0;
       foreach($columna as $celda){
         if($celda != 0){
           $co++;
@@ -97,7 +97,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
         $co2++;
       }
     }
-    $this->assertEquals(3, $co);
+    $this->assertEquals(3, $co2);
 
   }
 
