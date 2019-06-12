@@ -36,28 +36,35 @@ class FabricaCartones {
 
   protected function validarUnoANoventa($carton) {
 
-    $bool = TRUE;
     foreach ($carton->filas() as $fila) {
       foreach ($fila as $celda) {
         if($celda == 0){
           continue;
         }
         if ($celda < 1 || $celda > 90) {
-          $bool = FALSE;
+          return FALSE;
         }
       }
     }
-    $this->assertTrue($bool);
+    return TRUE;
     
   }
 
   protected function validarCincoNumerosPorFila($carton) {
+    $c=0;
     
     foreach($carton->filas() as $fila) 
     {
-      $this->assertCount(5,array_filter($fila));
+     foreach($fila as $numero){
+      if ($numero != 0){
+      $c++;
+      }
+     }
+     if($c=!5){
+       return FALSE;
+     }
     }
-    
+    return TRUE;
   }
 
   protected function validarColumnaNoVacia($carton) {
@@ -67,31 +74,33 @@ class FabricaCartones {
     foreach($carton->columnas() as $columna){
       foreach($columna as $celda){
         if ($celda != 0){
-        $co=$co+1;
+        $co++;
         }
       }
       if($co == 0){
-        $this->assertTrue(FALSE);
+        return FALSE;
       }
       else{
         $co = 0;
       }
     }
-    $this->assertTrue(TRUE);
+    return TRUE;
   }
 
   protected function validarColumnaCompleta($carton) {
     
-    $co=0;
     foreach($carton->columnas() as $columna) {
+      $co = 0;
       foreach($columna as $celda){
         if($celda != 0){
           $co++;
         }
       }
-      $this->assertNotEquals(3, $co);
-      $co = 0; 
+      if($co == 3){
+        return FALSE;
+      }
     }
+    return TRUE;
   }
 
   protected function validarTresCeldasIndividuales($carton) {
@@ -109,7 +118,10 @@ class FabricaCartones {
         $co2++;
       }
     }
-    $this->assertTrue($co2==3);
+    if($co2 != 3){
+      return FALSE;
+    }
+    return TRUE;
   }
 
   protected function validarNumerosIncrementales($carton) {
@@ -126,14 +138,12 @@ class FabricaCartones {
           $cel = $celda;
         }
       }
-      if($min>$max){
-        $this->assertTrue(TRUE);
-      }
-      else{
-        $this->assertTrue(FALSE);
+      if($min<=$max){
+        return FALSE;
       }
       $max = $cel;
     }
+    return TRUE;
   }
 
   protected function validarFilasConVaciosUniformes($carton) {
@@ -149,13 +159,11 @@ class FabricaCartones {
          $co = 0;
         }
       }
-      if($comax < 3){
-      $this->assertTrue(TRUE);
-      }
-      else{
-        $this->assertTrue(FALSE);
+      if($comax >= 3){
+      return FALSE;
       }
     }
+    return TRUE;
   }
 
 
