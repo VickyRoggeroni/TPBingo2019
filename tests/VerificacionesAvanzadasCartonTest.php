@@ -157,9 +157,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
      } //llave foreach1
   } //lave funcion
 
-} //llave de la clase
-
-
+  
 public function provider()
 {
       return [
@@ -168,3 +166,7 @@ public function provider()
       [new Carton((new FabricaCartones)->generarCarton())]
     ];
 }
+  
+} //llave de la clase
+
+
