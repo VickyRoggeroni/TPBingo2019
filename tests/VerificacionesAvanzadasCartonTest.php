@@ -9,6 +9,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que los números del carton se encuentren en el rango 1 a 90.
    */
+  	/**
+	* @dataProvider cartonProvider
+	*/
   public function testUnoANoventa(CartonInterface $carton) {
     
     $bool = TRUE;
@@ -28,6 +31,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que cada fila de un carton tenga exactamente 5 celdas ocupadas.
    */
+  	/**
+	* @dataProvider cartonProvider
+	*/
   public function testCincoNumerosPorFila(CartonInterface $carton) {
     
     foreach($carton->filas() as $fila) {
@@ -38,6 +44,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que para cada columna, haya al menos una celda ocupada.
    */
+  	/**
+	* @dataProvider cartonProvider
+	*/
   public function testColumnaNoVacia(CartonInterface $carton) {
 
     $co = 0;
@@ -60,6 +69,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que no haya columnas de un carton con tres celdas ocupadas.
    */
+  	/**
+	* @dataProvider cartonProvider
+	*/
   public function testColumnaCompleta(CartonInterface $carton) {
    $carton = new CartonEjemplo;
     $co=0;
@@ -79,6 +91,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que solo hay exactamente tres columnas que tienen solo una celda
    * ocupada.
    */
+  	/**
+	* @dataProvider cartonProvider
+	*/
   public function testTresCeldasIndividuales(CartonInterface $carton) {
     
     $co2 = 0;
@@ -101,6 +116,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que los números de las columnas izquierdas son menores que los de
    * las columnas a la derecha.
    */
+  	/**
+	* @dataProvider cartonProvider
+	*/
   public function testNumerosIncrementales(CartonInterface $carton) {
 
     $max = 0;
@@ -128,6 +146,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que en una fila no existan más de dos celdas vacias consecutivas.
    */
+  	/**
+	* @dataProvider cartonProvider
+	*/
   public function testFilasConVaciosUniformes(CartonInterface $carton) 
   {
     
