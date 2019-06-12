@@ -9,8 +9,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que los números del carton se encuentren en el rango 1 a 90.
    */
-  public function testUnoANoventa(CartonEjemplo $carton) {
+  public function testUnoANoventa() {
     
+    $carton = new Carton((new FabricaCartones)->generarCarton());
     $bool = TRUE;
     foreach ($carton->filas() as $fila) {
       foreach ($fila as $celda) {
@@ -28,8 +29,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que cada fila de un carton tenga exactamente 5 celdas ocupadas.
    */
-  public function testCincoNumerosPorFila(CartonInterface $carton) {
+  public function testCincoNumerosPorFila() {
     
+    $carton = new Carton((new FabricaCartones)->generarCarton());
     foreach($carton->filas() as $fila) {
       $this->assertCount(5,array_filter($fila));
     }
@@ -38,8 +40,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que para cada columna, haya al menos una celda ocupada.
    */
-  public function testColumnaNoVacia(CartonInterface $carton) {
+  public function testColumnaNoVacia() {
 
+    $carton = new Carton((new FabricaCartones)->generarCarton());
     $co = 0;
     foreach($carton->columnas() as $columna){
       foreach($columna as $celda){
@@ -60,8 +63,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que no haya columnas de un carton con tres celdas ocupadas.
    */
-  public function testColumnaCompleta(CartonInterface $carton) {
+  public function testColumnaCompleta() {
 
+    $carton = new Carton((new FabricaCartones)->generarCarton());
     $co=0;
     foreach($carton->columnas() as $columna) {
       foreach($columna as $celda){
@@ -79,8 +83,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que solo hay exactamente tres columnas que tienen solo una celda
    * ocupada.
    */
-  public function testTresCeldasIndividuales(CartonInterface $carton) {
+  public function testTresCeldasIndividuales() {
     
+    $carton = new Carton((new FabricaCartones)->generarCarton());
     $co2 = 0;
     foreach($carton->columnas() as $columna) {
       $co = 0;
@@ -101,8 +106,9 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    * Verifica que los números de las columnas izquierdas son menores que los de
    * las columnas a la derecha.
    */
-  public function testNumerosIncrementales(CartonInterface $carton) {
+  public function testNumerosIncrementales() {
 
+    $carton = new Carton((new FabricaCartones)->generarCarton());
     $max = 0;
     $cel = 0;
     foreach($carton->columnas() as $columna){
@@ -128,9 +134,10 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   /**
    * Verifica que en una fila no existan más de dos celdas vacias consecutivas.
    */
-  public function testFilasConVaciosUniformes(CartonInterface $carton) 
+  public function testFilasConVaciosUniformes() 
   {
-
+    
+    $carton = new Carton((new FabricaCartones)->generarCarton());
     foreach($carton->filas() as $fila)
     {	
       $co = 0;
