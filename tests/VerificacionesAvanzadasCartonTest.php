@@ -158,3 +158,13 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   } //lave funcion
 
 } //llave de la clase
+
+
+public function provider()
+{
+      return [
+      [new CartonEjemplo],
+      [new CartonJs],
+      [new Carton((new FabricaCartones)->generarCarton())]
+    ];
+}
