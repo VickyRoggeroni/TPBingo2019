@@ -8,7 +8,7 @@ namespace Bingo;
  */
 class CartonJs implements CartonInterface {
 
-  protected $numeros_carton = [];
+  public $numeros_carton = [];
 
   public function __construct() {
     $this->numeros_carton = [
