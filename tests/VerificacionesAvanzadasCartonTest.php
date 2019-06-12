@@ -111,6 +111,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
 
     $max = 0;
     $cel = 0;
+    $carton = new CartonEjemplo;
     foreach($carton->columnas() as $columna){
       $min = 100;
       foreach($columna as $celda){
