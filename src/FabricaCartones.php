@@ -20,7 +20,7 @@ class FabricaCartones {
     }
   }
 
-  protected function cartonEsValido($carton) {
+  protected function cartonEsValido(Carton $carton) {
     if ($this->validarUnoANoventa($carton) &&
       $this->validarCincoNumerosPorFila($carton) &&
       $this->validarColumnaNoVacia($carton) //&&
@@ -34,7 +34,7 @@ class FabricaCartones {
     return FALSE;
   }
 
-  protected function validarUnoANoventa($carton) {
+  protected function validarUnoANoventa(Carton $carton) {
 
     foreach ($carton->filas() as $fila) {
       foreach ($fila as $celda) {
@@ -50,7 +50,7 @@ class FabricaCartones {
     
   }
 
-  protected function validarCincoNumerosPorFila($carton) {
+  protected function validarCincoNumerosPorFila(Carton $carton) {
     $c=0;
     
     foreach($carton->filas() as $fila) 
@@ -67,7 +67,7 @@ class FabricaCartones {
     return TRUE;
   }
 
-  protected function validarColumnaNoVacia($carton) {
+  protected function validarColumnaNoVacia(Carton $carton) {
     
     foreach($carton->columnas() as $columna){
       $co = 0;
@@ -86,7 +86,7 @@ class FabricaCartones {
     return TRUE;
   }
 
-  protected function validarColumnaCompleta($carton) {
+  protected function validarColumnaCompleta(Carton $carton) {
     
     foreach($carton->columnas() as $columna) {
       $co = 0;
@@ -102,7 +102,7 @@ class FabricaCartones {
     return TRUE;
   }
 
-  protected function validarTresCeldasIndividuales($carton) {
+  protected function validarTresCeldasIndividuales(Carton $carton) {
     
     $co = 0;
     $co2 = 0;
