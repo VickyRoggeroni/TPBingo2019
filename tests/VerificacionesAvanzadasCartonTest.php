@@ -11,7 +11,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testUnoANoventa() {
     
-    $carton = new Carton((new FabricaCartones)->generarCarton());
+    $carton = new CartonEjemplo;
     $bool = TRUE;
     foreach ($carton->filas() as $fila) {
       foreach ($fila as $celda) {
@@ -31,7 +31,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testCincoNumerosPorFila() {
     
-    $carton = new Carton((new FabricaCartones)->generarCarton());
+    $carton = new CartonEjemplo;
     foreach($carton->filas() as $fila) {
       $this->assertCount(5,array_filter($fila));
     }
@@ -42,7 +42,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testColumnaNoVacia() {
 
-    $carton = new Carton((new FabricaCartones)->generarCarton());
+    $carton = new CartonEjemplo;
     $co = 0;
     foreach($carton->columnas() as $columna){
       foreach($columna as $celda){
@@ -65,7 +65,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testColumnaCompleta() {
 
-    $carton = new Carton((new FabricaCartones)->generarCarton());
+   $carton = new CartonEjemplo;
     $co=0;
     foreach($carton->columnas() as $columna) {
       foreach($columna as $celda){
@@ -85,7 +85,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testTresCeldasIndividuales() {
     
-    $carton = new Carton((new FabricaCartones)->generarCarton());
+    $carton = new CartonEjemplo;
     $co2 = 0;
     foreach($carton->columnas() as $columna) {
       $co = 0;
@@ -108,7 +108,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testNumerosIncrementales() {
 
-    $carton = new Carton((new FabricaCartones)->generarCarton());
+    $carton = new CartonEjemplo;
     $max = 0;
     $cel = 0;
     foreach($carton->columnas() as $columna){
@@ -137,7 +137,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
   public function testFilasConVaciosUniformes() 
   {
     
-    $carton = new Carton((new FabricaCartones)->generarCarton());
+    $carton = new CartonEjemplo;
     foreach($carton->filas() as $fila)
     {	
       $co = 0;
